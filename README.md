@@ -22,6 +22,7 @@ i)	#Use a linear search method to match the item in a list.
 
 
 
+
 ```
 ii)	# Find the element in a list using Binary Search(Iterative Method).
 ```
@@ -32,11 +33,30 @@ ii)	# Find the element in a list using Binary Search(Iterative Method).
 
 ```
 iii)	# Find the element in a list using Binary Search (recursive Method).
-```
+```python
+# developed by: MERCY A
+# Register number: 212223110027
 
-
-
-
+def binary(array,key,low,high):
+    if high>=low:
+        mid=low+(high-low)//2
+        if array[mid]==key:
+            return mid
+        elif array[mid]<key:
+            return binary(array,key,mid+1,high)
+        elif array[mid]>key:
+            return binary(array,key,low,mid-1)
+    return -1
+array=eval(input())
+key=int(input())
+array.sort()
+low,high=0,len(array)-1
+print(array)
+result=binary(array,key,low,high)
+if result==-1:
+    print("Element not found")
+else:
+    print("Element found at index: ",result)
 
 ```
 ## Sample Input and Output
