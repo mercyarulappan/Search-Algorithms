@@ -19,17 +19,48 @@ To write a program to perform linear search and binary search using python progr
 ## Program:
 i)	#Use a linear search method to match the item in a list.
 ```python
-
-
-
-
+def linearsearch(a,b,array):
+    for i in range(0,b):
+        if array[i]==a:
+            return i
+    return -1
+array=eval(input())
+a=int(input())
+b=len(array)
+array.sort()
+result=linearsearch(a,b,array)
+if(result==-1):
+    print(array)
+    print("Element not found")
+else:
+    print(array)
+    print("Element found at index: ",result)
 ```
 ii)	# Find the element in a list using Binary Search(Iterative Method).
-```
+```python
+# Developed by: MERCY A
+# Register number: 212223110027
 
-
-
-
+def binary(array,key,low,high):
+    while(low<=high):
+        mid=low+(high-low)//2
+        if array[mid]==key:
+            return mid
+        elif array[mid]<key:
+            low=mid+1
+        elif array[mid]>key:
+            high=mid-1
+    return -1
+array=eval(input())
+key=int(input())
+array.sort()
+low,high=0,len(array)-1
+print(array)
+result=binary(array,key,low,high)
+if result==-1:
+    print("Element not found ")
+else:
+    print("Element found at index: ",result)
 
 ```
 iii)	# Find the element in a list using Binary Search (recursive Method).
@@ -60,11 +91,12 @@ else:
 
 ```
 ## Sample Input and Output
-
-
-
-
-
+### linear search method:
+![Screenshot 2024-05-07 232417](https://github.com/mercyarulappan/Search-Algorithms/assets/149233730/30de55c0-1646-4421-a0ee-7dfc975d0376)
+###  Iterative method in binary search:
+![Screenshot 2024-05-07 232446](https://github.com/mercyarulappan/Search-Algorithms/assets/149233730/2984e300-c49c-4d09-b2e0-c01440595415)
+### Recursive method in binary search:
+![Screenshot 2024-05-07 232446](https://github.com/mercyarulappan/Search-Algorithms/assets/149233730/99ce1c53-0e00-48e6-8c5f-561c4eb3137f)
 
 ## Result
 Thus the linear search and binary search algorithm is implemented using python programming.
